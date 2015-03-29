@@ -6,12 +6,9 @@ Example of a bug(?) that occurs when running Camel CXF component in spring-boot 
 
 1. Clone this repo
 2. Verify `src/main/resources/application.properties` has `logging.level. = INFO`
-3. run `./gradlew build`
-4. run `java -jar build/libs/spring-boot-camel-cxf-logging-bug-0.0.1.jar``
+3. run `./gradlew bootRun`
 
-*Note:* Java8 is used in this example
-
-It's possible to __avoid the defect__ by setting the log-level to `WARN` (And redo the steps above)
+It's possible to __avoid the defect__ by setting the log-level to `WARN` (And redo step 3 above)
 
 ### This is the code that breaks
 ```Java
