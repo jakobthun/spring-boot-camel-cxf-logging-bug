@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+mainClassName = "tl.jt.bug.Main"
+
+jar {
+    baseName = 'spring-boot-camel-cxf-logging-bug'
+    version =  '0.0.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    def camelVersion = "2.15.0"
+    def springBootVersion = "1.2.2.RELEASE"
+    
+    //Spring boot
+    compile("org.springframework.boot:spring-boot-starter-web:" + springBootVersion) {
+        exclude module: "spring-boot-starter-tomcat:" + springBootVersion
+    }
+    compile("org.springframework.boot:spring-boot-starter-jetty:" + springBootVersion)
+    compile("org.springframework.boot:spring-boot-starter-actuator:" + springBootVersion)
+    
+    // Camel
+    compile("org.apache.camel:camel-core:"+camelVersion)
+    compile("org.apache.camel:camel-spring-boot:"+camelVersion)
+    compile("org.apache.camel:camel-servlet:"+camelVersion)
+    compile("org.apache.camel:camel-cxf:"+camelVersion)
+
+    testCompile 'junit:junit:4.12'
+}
