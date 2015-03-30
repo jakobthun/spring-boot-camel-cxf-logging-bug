@@ -1,6 +1,8 @@
 # Spring boot camel CXF bug(?)
 
-Example of a bug(?) that occurs when running Camel CXF component in spring-boot with logging @ INFO level
+Example of a bug(?) that occurs when running Camel CXF component in spring-boot with logging @ INFO level. 
+Camel JIRA-issue is created, and can be found here:
+https://issues.apache.org/jira/browse/CAMEL-8570
 
 ## Howto reproduce bad behaviour
 
@@ -14,6 +16,7 @@ It's possible to __avoid the defect__ by setting the log-level to `WARN` (And re
 ```Java
 /*
  * From DefaultCamelContext (rows 2445-2455)
+ * Exception occurs in DefaultCamelContext.java:2449
  */
 if (log.isInfoEnabled()) {
     // count how many routes are actually started
