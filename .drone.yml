@@ -1,0 +1,7 @@
+image: oraclejdk8
+script:
+  - ./gradlew build
+notify:
+  email:
+    recipients:
+      - jakob.thun@gmail.com
