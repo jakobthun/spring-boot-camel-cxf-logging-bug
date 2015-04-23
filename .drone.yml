@@ -1,4 +1,4 @@
-image: oraclejdk8
+image: dockerfile/java:oracle-java8
 script:
   - ./gradlew build
 notify:
