@@ -1,6 +1,12 @@
 image: dockerfile/java:oracle-java8
 script:
   - ./gradlew build
+deploy:
+  ssh:
+    target: root@46.101.154.202:/root
+    artifacts:
+      - GITARCHIVE
+    cmd: echo Done
 notify:
   email:
     recipients:
