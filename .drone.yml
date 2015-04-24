@@ -5,11 +5,10 @@ deploy:
   ssh:
     target: core@46.101.154.202:/home/core
     artifacts:
-      # Jar and deployscript will be zipped and put to /home/core
       - build/libs/*.jar
-      - deploy.sh
-    cmd: ./deploy.sh
+    cmd: ls
 notify:
   email:
     recipients:
       - jakob.thun@gmail.com
+#
