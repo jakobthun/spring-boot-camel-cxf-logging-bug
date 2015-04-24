@@ -6,15 +6,7 @@ deploy:
     target: root@46.101.154.202:/root
     artifacts:
       - build/libs/*.jar
-    cmd: >
-      wget https://raw.githubusercontent.com/aglover/ubuntu-equip/master/equip_java8.sh && 
-      bash equip_java8.sh &&
-      rm equip_java8.sh &&
-      tar -xvzf $(ls *.tar.gz) &&
-      rm $(ls *.tar.gz) &&
-      cd $(ls -d */) &&
-      ./gradlew build &&
-      java -jar $(ls spring*/build/libs/*.jar)
+    cmd: docker run -i -t -v $(ls -rt *.jar | tail --lines=1):/data/app.jar --rm dockerfile/java:oracle-java8 java -jar /data/app.jar
 notify:
   email:
     recipients:
