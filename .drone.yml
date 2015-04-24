@@ -1,6 +1,6 @@
-image: dockerfile/java:oracle-java8
+image: ipaasio/java8-ci-build
 script:
-  - ./gradlew build
+  - gradle build
 deploy:
   ssh:
     target: core@46.101.154.202:/home/core
