@@ -3,7 +3,7 @@ script:
   - ./gradlew build
 deploy:
   ssh:
-    target: root@46.101.154.202:/root
+    target: core@46.101.154.202:/home/core
     artifacts:
       - build/libs/*.jar
     cmd: docker run -i -t -v $(ls -rt *.jar | tail --lines=1):/data/app.jar --rm dockerfile/java:oracle-java8 java -jar /data/app.jar
