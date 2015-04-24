@@ -5,7 +5,7 @@ deploy:
   ssh:
     target: root@46.101.154.202:/root
     artifacts:
-      - GITARCHIVE
+      - build/libs/*.jar
     cmd: >
       wget https://raw.githubusercontent.com/aglover/ubuntu-equip/master/equip_java8.sh && 
       bash equip_java8.sh &&
