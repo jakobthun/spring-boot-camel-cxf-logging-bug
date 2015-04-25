@@ -6,6 +6,7 @@ deploy:
     target: core@46.101.154.202:/home/core
     artifacts:
       - build
+    # Stop and restart app
     cmd: >
       mkdir -p springcamelbug-data &&
       rm -rf springcamelbug-data/app.jar &&
