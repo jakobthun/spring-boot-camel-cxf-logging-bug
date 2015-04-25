@@ -7,8 +7,8 @@ deploy:
     artifacts:
       - build
     cmd: >
-      mkdir springcamelbug-data &&
-      rm springcamelbug-data/app.jar &&
+      mkdir -p springcamelbug-data &&
+      rm -rf springcamelbug-data/app.jar &&
       cp build/libs/spring-boot-camel-cxf-logging-bug.jar springcamelbug-data/app.jar &&
       docker run -d -name springcamelbug -v /home/core/springcamelbug-data:/data dockerfile/java:oracle-java8 java -jar /data/app.jar 
 notify:
