@@ -8,7 +8,7 @@ deploy:
     artifacts:
       - build
     # Stop and restart app with updated jar.
-    cmd: >
+    cmd:>
     	docker stop -t 30 springcamelbug || true && 
     	docker rm springcamelbug || true && 
     	mkdir -p springcamelbug-data && 
