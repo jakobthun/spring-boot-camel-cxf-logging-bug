@@ -9,7 +9,7 @@ deploy:
       - build
     # Stop and restart app with new jar.
     cmd: >
-      docker stop -t 30 springcamelbug
+      docker stop -t 30 springcamelbug &&
       mkdir -p springcamelbug-data &&
       rm -rf springcamelbug-data/app.jar &&
       cp build/libs/spring-boot-camel-cxf-logging-bug.jar springcamelbug-data/app.jar &&
