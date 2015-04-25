@@ -5,8 +5,8 @@ deploy:
   ssh:
     target: core@46.101.154.202:/home/core
     artifacts:
-      - build/libs/*.jar
-    cmd: docker run -d -v /home/core/\$(ls -1rt | grep .*jar$ | tail -n 1):/data/app.jar dockerfile/java:oracle-java8 java -jar /data/app.jar
+      - build
+    cmd: ls
 notify:
   email:
     recipients:
