@@ -17,8 +17,7 @@ targetCompatibility = 1.8
 mainClassName = "tl.jt.bug.Main"
 
 jar {
-    baseName = 'spring-boot-camel-cxf-logging-bug'
-    version =  '0.0.1'
+    baseName = project.name
 }
 
 repositories {
