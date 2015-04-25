@@ -7,7 +7,7 @@ deploy:
     # copy build folder to remote
     artifacts:
       - build
-    # Stop and restart app with new jar.
+    # Stop and restart app with updated jar.
     cmd: >
       docker stop -t 30 springcamelbug || true &&
       docker rm springcamelbug || true &&
